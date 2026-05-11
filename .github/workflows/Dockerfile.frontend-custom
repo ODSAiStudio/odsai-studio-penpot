@@ -1,0 +1,8 @@
+FROM penpotapp/frontend:2.13.0
+
+USER root
+
+# Patch the English translation: change "OpenID" button text to "ODSAI SSO"
+RUN sed -i 's/"auth.login-with-oidc-submit":"OpenID"/"auth.login-with-oidc-submit":"ODSAI SSO"/g' /var/www/app/js/translation.en.js
+
+USER penpot:penpot
